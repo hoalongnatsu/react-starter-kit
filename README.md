@@ -89,8 +89,45 @@ export default new SampleService("/api", false);
 yarn jest:testing
 ```
 
-Cypress
+### Cypress
 
 ```
 yarn cypress
 ```
+
+## Config env file
+
+Open .env-cmdrc file
+
+```.env-cmdrc
+{
+  "dev": {
+    "PORT": "3000",
+    "REACT_APP_STAGE": "dev",
+    "REACT_APP_API_URL": "http://localhost:3001",
+    "REACT_APP_STORAGE_URL": "http://localhost:3001"
+  },
+  "testing": {
+    "PORT": "3000",
+    "REACT_APP_STAGE": "testing",
+    "REACT_APP_API_URL": "http://localhost:3001",
+    "REACT_APP_STORAGE_URL": "http://localhost:3001"
+  }
+}
+```
+
+Import env in src/configs/env.ts file
+
+```src/configs/env.ts
+export const CURRENT_ENV = {
+  APP_STAGE: process.env.REACT_APP_STAGE,
+  API_URL: process.env.REACT_APP_API_URL,
+  STORAGE_URL: process.env.REACT_APP_STORAGE_URL,
+};
+```
+
+**Env need prefix with REACT_APP_**
+
+Use:
++ yarn start:dev => load env in dev
++ yarn start:testing => load env in testing

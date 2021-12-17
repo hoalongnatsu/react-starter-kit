@@ -1,0 +1,23 @@
+header {
+  padding: 20px 0;
+
+  .menu {
+    text-align: right;
+    @include flex-center-vertical;
+    justify-content: right;
+
+    button {
+      margin-right: 20px;
+    }
+
+    .anticon svg {
+      height: 20px;
+      width: 20px;
+    }
+
+    .ant-badge {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  }
+}

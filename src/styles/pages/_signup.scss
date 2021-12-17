@@ -1,0 +1,19 @@
+.signup {
+  width: 950px;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  .signup-policy {
+    margin-top: 15px;
+
+    .ant-card {
+      margin-top: 15px;
+    }
+
+    .ant-checkbox-group {
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

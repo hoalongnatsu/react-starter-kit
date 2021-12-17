@@ -1,0 +1,4 @@
+Dockerfile
+Dockerfile.*
+.dockerignore
+.gitlab-ci.yml

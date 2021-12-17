@@ -1,0 +1,28 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-center-horizontal {
+  @include flex-center-horizontal;
+}
+
+.flex-space-around {
+  @include flex-space-around;
+}
+
+.flex-space-between {
+  @include flex-space-between;
+}
+
+.flex-center-vertical {
+  @include flex-center-vertical;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -4,7 +4,7 @@ import { Form } from "antd";
 import { IntlProvider } from "react-intl";
 import LoginInput from "./LoginInput";
 import { BrowserRouter as Router } from "react-router-dom";
-import { defaultResource } from "@core/contants/resource";
+import { defaultResource } from "@core/constants/resource";
 
 function renderWithProviders(component: any) {
   return render(

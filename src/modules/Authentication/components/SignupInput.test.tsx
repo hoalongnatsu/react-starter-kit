@@ -4,7 +4,7 @@ import { Button } from "antd";
 import { Form } from "antd";
 import { IntlProvider } from "react-intl";
 import SignupInput from "./SignupInput";
-import { defaultResource } from "@core/contants/resource";
+import { defaultResource } from "@core/constants/resource";
 
 function renderWithProviders(component: any) {
   return render(

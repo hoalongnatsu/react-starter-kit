@@ -1,7 +1,7 @@
 import { ModuleConfig } from "@core/interfaces";
 import Path from "@utils/helpers/path";
 import cloneDeep from "lodash.clonedeep";
-import { defaultResource } from "@core/contants/resource";
+import { defaultResource } from "@core/constants/resource";
 import modules from "@modules";
 
 class Resource {

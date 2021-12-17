@@ -11,7 +11,7 @@ import Resource from "@utils/helpers/resource";
 import ResourceContext from "@utils/contexts/Resource";
 import Routes from "@core/components/Init/Routes";
 import configureStore from "@store/configureStore";
-import { defaultResource } from "@core/contants/resource";
+import { defaultResource } from "@core/constants/resource";
 
 export const [store, persistor] = configureStore();
 

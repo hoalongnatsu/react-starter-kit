@@ -3,7 +3,7 @@ import { Suspense, lazy, useEffect, useState } from "react";
 
 import ErrorBoundary from "@core/components/ErrorBoundary";
 import { Helmet } from "react-helmet-async";
-import { RouteResource } from "@core/contants/resource";
+import { RouteResource } from "@core/constants/resource";
 import TopBarProgress from "react-topbar-progress-indicator";
 import { store } from "@root/App";
 

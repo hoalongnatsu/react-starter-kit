@@ -32,55 +32,6 @@ describe("Login", () => {
     jest.spyOn(console, "warn").mockImplementation();
   });
 
-  test("show error validate email when input wrong email format", async () => {
-    const { getByLabelText } = renderWithProviders(
-      <Form>
-        <LoginInput />
-      </Form>,
-    );
-
-    await fireEvent.change(getByLabelText("Email"), {
-      target: { value: "a@" },
-    });
-    expect(console.warn).toHaveBeenCalledWith("async-validator:", [
-      "'email' is not a valid email",
-    ]);
-  });
-
-  test("show error validate password when input wrong password format", async () => {
-    const { getByLabelText } = renderWithProviders(
-      <Form>
-        <LoginInput />
-      </Form>,
-    );
-
-    await fireEvent.change(getByLabelText("Password"), {
-      target: { value: "1234567" },
-    });
-    expect(console.warn).toHaveBeenCalledWith("async-validator:", [
-      "'password' must be at least 8 characters",
-    ]);
-  });
-
-  test("show error validate when not input email and password", async () => {
-    const onFinish = jest.fn();
-
-    const { getByText } = renderWithProviders(
-      <Form onFinish={onFinish}>
-        <LoginInput />
-      </Form>,
-    );
-
-    await fireEvent.click(getByText("Login"));
-    expect(console.warn).toHaveBeenCalledWith("async-validator:", [
-      "'email' is required",
-    ]);
-    expect(console.warn).toHaveBeenCalledWith("async-validator:", [
-      "'password' is required",
-    ]);
-    expect(onFinish).toHaveBeenCalledTimes(0);
-  });
-
   test("called onFinish when submit with valid email and password", async () => {
     const onFinish = jest.fn();
 

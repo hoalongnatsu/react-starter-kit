@@ -131,3 +131,25 @@ export const CURRENT_ENV = {
 Use:
 + yarn start:dev => load env in dev
 + yarn start:testing => load env in testing
+
+## Support Dockerfile for CI/CD
+
+### Build and run test image with Jest
+
+```
+docker build . --target test -t md-frontend-test
+docker run --rm -e FORCE_COLOR=true -e CI=true md-frontend-test jest:testing --verbose
+```
+
+### Test with cypress
+Use image `cypress/browsers:node12.14.1-chrome85-ff81` for build image test. 
+
+```Dockerfile
+FROM cypress/browsers:node12.14.1-chrome85-ff81
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY . .
+RUN npm ci
+CMD ["yarn", cy:test""]
+```
